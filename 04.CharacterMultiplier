@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _04.characterMultiplier
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] input = Console.ReadLine().Split(' ').ToArray();
+            string first = input[0];
+            string second = input[1];
+
+            var sum = 0;
+
+            if (first.Length > second.Length)
+            {
+                second = second.PadRight(first.Length, '1');
+            }
+            else
+            {
+                first = first.PadRight(second.Length, '1');
+            }
+            for (int i = 0; i < first.Length; i++)
+            {
+                if (first[i] == '1')
+                {
+                    sum += second[i];
+                }
+                else if (second[i] == '1')
+                {
+                    sum += first[i];
+                }
+                else
+                {
+                    sum += first[i] * second[i];
+                }
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}

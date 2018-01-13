@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _05.magiExchengableWords
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var str1 = Console.ReadLine().Split(' ')
+                .ToArray();
+            string word1 = str1[0];
+            string word2 = str1[1];
+
+            var area1 = word1.ToCharArray().Distinct().ToArray();
+            var area2 = word2.ToCharArray().Distinct().ToArray();
+
+            if (area1.Length == area2.Length)
+            {
+                Console.WriteLine("true");
+            }
+            else
+            {
+                Console.WriteLine("false");
+            }
+        }
+    }
+}
